@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductor internacional</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <main class="translator">
+        <h1>Traductor internacional</h1>
+        <p>Traduce textos entre inglés y español sin conexión.</p>
+
+        <div class="language-selector">
+            <select id="direction">
+                <option value="en-es">Inglés · Español</option>
+                <option value="es-en">Español · Inglés</option>
+            </select>
+        </div>
+
+        <textarea
+            id="input-text"
+            placeholder="Escribe el texto que quieres traducir..."
+        ></textarea>
+
+        <button id="translate-button">Traducir</button>
+
+        <p id="status">Preparado para traducir.</p>
+
+        <div class="result-container">
+            <h2>Traducción</h2>
+            <p id="result">Aquí aparecerá la traducción.</p>
+        </div>
+    </main>
+</body>
+</html>
