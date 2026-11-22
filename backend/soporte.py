@@ -12,7 +12,19 @@ API_KEY = os.getenv("GEMINI_API_KEY")
 if not API_KEY:
     raise ValueError("No se ha encontrado la API Key de Gemini.")
 
-client = genai.Client(api_key=API_KEY)
+client = genai.Client(
+    api_key=API_KEY,
+    http_options=types.HttpOptions(
+        retry_options=types.HttpRetryOptions(
+            attempts=4,
+            initial_delay=1,
+            exp_base=2,
+            max_delay=10,
+            jitter=1,
+            http_status_codes=[408, 429, 500, 502, 503, 504]
+        )
+    )
+)
 
 
 TICKET_SCHEMA = {
