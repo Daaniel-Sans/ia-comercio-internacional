@@ -78,3 +78,16 @@ def clasificar_consulta(mensaje):
     )
 
     return json.loads(response.text)
+
+
+if __name__ == "__main__":
+    print("=== Clasificador de consultas de clientes ===")
+
+    mensaje = input("\nIntroduce la consulta del cliente: ")
+
+    resultado = clasificar_consulta(mensaje)
+
+    print("\n=== Resultado del análisis ===")
+    print(f"Categoría: {resultado['categoria']}")
+    print(f"Prioridad: {resultado['prioridad']}")
+    print(f"Respuesta sugerida: {resultado['respuesta_sugerida']}")
